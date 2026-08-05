@@ -14,7 +14,7 @@ This program creates a telephone directory using **9 hash tables** with **linear
 
 ## Compilation
 
-Compile all Java source files:
+Compile the Java source file:
 
 ```
 javac Directory.java
@@ -51,6 +51,7 @@ Example:
 Insert Bob 5482930 456_Oak_Street
 Insert Alice 5482362 452_Oak_Street
 Modify 5482362 452_Brown_Street
+Modify 5482930 452_Brown_Street 5482934
 Delete 5482362
 ```
 
