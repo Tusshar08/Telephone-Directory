@@ -2,7 +2,7 @@
 
 ## Overview
 
-This program creates a telephone directory using **9 hash tables** with **linear probing** for collision resolution. Each record stores a person's **name**, **phone number**, and **address**.
+This program creates a telephone directory using **9 hash tables** with **linear probing** for collision resolution. Each record stores a person's **name**, **phone number**, and **address**. The program reads commands from **input.txt** and writes the output to **output.txt**.
 
 ---
 
@@ -16,7 +16,7 @@ This program creates a telephone directory using **9 hash tables** with **linear
 
 Compile all Java source files:
 
-```bash
+```
 javac Directory.java
 ```
 
@@ -26,68 +26,48 @@ javac Directory.java
 
 Run the program using:
 
-```bash
-java Directory.java
+```
+java Directory
 ```
 
 ---
 
-## Menu Options
+## Input File
+
+The program reads commands from `input.txt`.
+
+Supported commands are:
 
 ```
-Directory
-
-1. Insert
-2. Delete
-3. Modify
-4. Display
-5. Exit
+Insert <Name> <PhoneNumber> <Address>
+Delete <PhoneNumber>
+Modify <OldPhoneNumber> <NewAddress>
+Modify <OldPhoneNumber> <NewAddress> <NewPhoneNumber>
 ```
 
-Enter the corresponding option number to perform the desired operation.
+Example:
+
+``` 
+Insert Bob 5482930 456_Oak_Street
+Insert Alice 5482362 452_Oak_Street
+Modify 5482362 452_Brown_Street
+Delete 5482362
+```
 
 ---
 
-## User Prompts
+## Output
 
-### Insert
+The program writes the return value of each command to `output.txt`.
 
-```
-Enter Name:
-Enter Phone Number:
-Enter Address:
-```
-
-### Delete
+Example:
 
 ```
-Enter Phone Number:
+true
+true
+true
+false
 ```
-
-### Modify
-
-```
-Enter Existing Phone Number:
-```
-
-Choose one of the following:
-
-* **Modify Address Only**
-
-  ```
-  Enter New Address:
-  ```
-
-* **Modify Phone Number**
-
-  ```
-  Enter New Phone Number:
-  Enter New Address (Press Enter to keep the existing address):
-  ```
-
-### Display
-
-Displays all hash tables along with the records stored in each slot.
 
 ---
 
@@ -106,5 +86,5 @@ Invalid phone numbers are rejected before any operation is performed.
 ## Notes
 
 * Duplicate phone numbers are not allowed.
-* Deleted records are marked as **DELETED** and reused during future insertions.
+* Deleted records are marked as **DELETED** and those slots are reused during future insertions.
 * Linear probing is used for insertion, searching, deletion, and modification.
