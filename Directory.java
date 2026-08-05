@@ -1,29 +1,13 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
-/**
- * Directory
- * ADSA Assignment-1
- *
- * TODO:
- * 1. Implement hash tables
- * 2. Implement insertion
- * 3. Implement deletion
- * 4. Implement modification
- */
 public class Directory {
-
-    // -----------------------------
-    // Constants
-    // -----------------------------
 
     private static final int TABLES = 9; // Total tables
     private static final int TABLE_SIZE = 20; // Slots in each table
 
-
-    // -----------------------------
-    // Record Class
-    // -----------------------------
-    // Represents one contact in the directory
     static class Record {
 
         String name;
@@ -39,33 +23,15 @@ public class Directory {
         }
     }
 
-
-    // -----------------------------
-    // Slot Status
-    // -----------------------------
     enum Status {
         EMPTY,
         OCCUPIED,
         DELETED
     }
 
-
-    // -----------------------------
-    // 9 Hash Tables
-    // -----------------------------
-    // tables[0] -> T1
-    // tables[1] -> T2
-    // ...
-    // tables[8] -> T9
     private Record[][] tables = new Record[TABLES][TABLE_SIZE];
 
-
-    // -----------------------------
-    // Constructor
-    // -----------------------------
     public Directory() {
-
-        // Initialize every slot as EMPTY
 
         for(int i = 0; i < TABLES; i++) {
 
@@ -83,32 +49,11 @@ public class Directory {
 
     }
 
-
-    // =====================================================
-    // Helper Functions
-    // =====================================================
-
-    /**
-     * Returns table index (0-8)
-     * from first digit of phone number.
-     *
-     * Example:
-     * 5482910
-     * ->
-     * tableIndex = 4 (T5)
-     */
     private int getTableIndex(String phone) {        
 
         return (phone.charAt(0) - '0') - 1;
     }
 
-
-    /**
-     * Returns hash value
-     * x % 20
-     *
-     * x = last six digits
-     */
     private int hash(String phone) {
 
         String lastSix = phone.substring(1);
@@ -140,21 +85,6 @@ public class Directory {
         return true;
     }
 
-
-    // =====================================================
-    // Required Operations
-    // =====================================================
-
-    /**
-     * Insert a new record.
-     *
-     * Steps:
-     * 1. Check duplicate phone
-     * 2. Find table
-     * 3. Compute hash
-     * 4. Linear probing
-     * 5. Insert record
-     */
     public boolean insert(String name, String phone, String address) {
 
 
@@ -179,14 +109,6 @@ public class Directory {
         return false; // Insertion Unsuccessful
     }
 
-
-    /**
-     * Delete a record.
-     *
-     * Steps:
-     * 1. Search record
-     * 2. Mark slot as DELETED
-     */
     public boolean delete(String phone) {
 
         if (!validPhone(phone)) return false; // Check phone validity
@@ -204,16 +126,6 @@ public class Directory {
         return true;
     }
 
-
-    /**
-     * Modify record.
-     *
-     * Case 1:
-     * Address only
-     *
-     * Case 2:
-     * Phone changes
-     */
     public boolean modify(String oldPhone, String newAddress, String newPhone) {
 
         if (!validPhone(oldPhone)) return false; // Check phone validity
@@ -228,7 +140,6 @@ public class Directory {
 
         if(newPhone == null || newPhone.isEmpty()){
             tables[index][slot].address = newAddress;
-            System.out.println("Only address is modified");
             return true;
         }
         else{
@@ -245,19 +156,12 @@ public class Directory {
 
             delete(oldPhone);
             if (insert(oldName, newPhone, address)) {
-                System.out.println("Phone number and address modified.");
                 return true;
             }
         }
         return false;
     }
 
-
-    /**
-     * Searches a phone number.
-     *
-     * Helpful for delete and modify.
-     */
     private int search(String phone, int index, int hashValue) {
 
         for(int i=0 ; i<TABLE_SIZE; i++){
@@ -277,12 +181,6 @@ public class Directory {
         return -1;
     }
 
-
-    /**
-     * Prints all records.
-     *
-     * Useful for debugging.
-     */
     public void display() {
         for (int i = 0; i < TABLES; i++) {
             System.out.println("\n Table T" + (i + 1));
@@ -301,87 +199,52 @@ public class Directory {
         }
     }
 
+    public static void main(String[] args) throws FileNotFoundException {
 
-    // =====================================================
-    // Driver
-    // =====================================================
+        Directory directory = new Directory();
 
-    public static void main(String[] args) {
+        Scanner sc = new Scanner(new File("input.txt"));
+        PrintWriter out = new PrintWriter("output.txt");
 
-        Directory directory =
-                new Directory();
+        while(sc.hasNextLine()) {
 
-        Scanner sc = new Scanner(System.in);
+            String line = sc.nextLine();
+            String[] section = line.split(" ");
 
-        while(true) {
+            switch(section[0].toLowerCase()) {
 
-            System.out.println("\n Directory ");
-
-            System.out.println("1. Insert");
-            System.out.println("2. Delete");
-            System.out.println("3. Modify");
-            System.out.println("4. Display");
-            System.out.println("5. Exit");
-
-            System.out.print("Choice: ");
-
-            int choice = sc.nextInt();
-            sc.nextLine();
-
-            switch(choice) {
-
-                case 1:{
-                    System.out.print("Enter Name: ");
-                    String name = sc.nextLine();
-                    System.out.print("Enter Phone Number: ");
-                    String phone = sc.nextLine();
-                    System.out.print("Enter Address: ");
-                    String address = sc.nextLine();
-                    boolean inserted = directory.insert(name, phone, address);
-                    if (inserted) System.out.println("Record inserted successfully.");
-                    else System.out.println("Insertion failed.");
+                case "insert":{
+                    boolean inserted = directory.insert(section[1], section[2], section[3]);
+                    out.println(inserted);
 
                     break;
                 }
-                case 2:{
-                    System.out.print("Enter Phone Number: ");
-                    String phone = sc.nextLine();
-                    boolean delete = directory.delete(phone);
-                    if (delete) System.out.println("Record deleted successfully.");
-                    else System.out.println("Deletion failed.");
+                case "delete":{
+                    boolean delete = directory.delete(section[1]);
+                    out.println(delete);
 
                     break;
                 }
 
-                case 3:{
-                    System.out.print("Enter Old Phone Number: ");
-                    String oldPhone = sc.nextLine();
-                    System.out.print("Enter New Address: ");
-                    String newAddress = sc.nextLine();
-                    System.out.print("Enter New Phone Number: ");
-                    String newPhone = sc.nextLine();
-                    boolean modified = directory.modify(oldPhone, newAddress, newPhone);
-                    if (modified) System.out.println("Record modified successfully.");
-                    else System.out.println("Modification failed.");
+                case "modify":{
+                    String newPhone = "";
+                    if(section.length == 4){ // If new phone number is passed
+                        newPhone = section[3];
+                    }
+                    boolean modified = directory.modify(section[1], section[2], newPhone);
+                    out.println(modified);
 
                     break;
                 }
 
-                case 4:
+                case "debug":
 
                     directory.display();
 
                     break;
-
-                case 5:
-
-                    System.out.println("The End!");
-                    return;
-
-                default:
-
-                    System.out.println("Invalid Choice");
             }
         }
+        sc.close();
+        out.close();
     }
 }
