@@ -1,5 +1,8 @@
-Insert Bob 5482930 456_Oak_street
-Insert Alice 5482362 452_Oak_street
-Modify 5482362 452_Brown_street
-Delete 5482362
-Debug
+Insert Alice 5482910 123_Main_St
+Insert Bob 5482930 456_Oak_St
+Delete 5482910
+Delete 5482950
+Insert Charlie 3000015 Old_Address
+Modify 3000015 New_Address
+Insert Dave 5482910 789_Pine_St
+Print

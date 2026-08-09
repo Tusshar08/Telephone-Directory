@@ -1,4 +1,205 @@
-true
-true
-true
-true
+Success
+Success
+Success
+Failure: Record unavailable
+Success
+Success
+Success
+
+ Table T1
+Slot 0 : EMPTY
+Slot 1 : EMPTY
+Slot 2 : EMPTY
+Slot 3 : EMPTY
+Slot 4 : EMPTY
+Slot 5 : EMPTY
+Slot 6 : EMPTY
+Slot 7 : EMPTY
+Slot 8 : EMPTY
+Slot 9 : EMPTY
+Slot 10 : EMPTY
+Slot 11 : EMPTY
+Slot 12 : EMPTY
+Slot 13 : EMPTY
+Slot 14 : EMPTY
+Slot 15 : EMPTY
+Slot 16 : EMPTY
+Slot 17 : EMPTY
+Slot 18 : EMPTY
+Slot 19 : EMPTY
+
+ Table T2
+Slot 0 : EMPTY
+Slot 1 : EMPTY
+Slot 2 : EMPTY
+Slot 3 : EMPTY
+Slot 4 : EMPTY
+Slot 5 : EMPTY
+Slot 6 : EMPTY
+Slot 7 : EMPTY
+Slot 8 : EMPTY
+Slot 9 : EMPTY
+Slot 10 : EMPTY
+Slot 11 : EMPTY
+Slot 12 : EMPTY
+Slot 13 : EMPTY
+Slot 14 : EMPTY
+Slot 15 : EMPTY
+Slot 16 : EMPTY
+Slot 17 : EMPTY
+Slot 18 : EMPTY
+Slot 19 : EMPTY
+
+ Table T3
+Slot 0 : EMPTY
+Slot 1 : EMPTY
+Slot 2 : EMPTY
+Slot 3 : EMPTY
+Slot 4 : EMPTY
+Slot 5 : EMPTY
+Slot 6 : EMPTY
+Slot 7 : EMPTY
+Slot 8 : EMPTY
+Slot 9 : EMPTY
+Slot 10 : EMPTY
+Slot 11 : EMPTY
+Slot 12 : EMPTY
+Slot 13 : EMPTY
+Slot 14 : EMPTY
+Slot 15 : Name: Charlie, Phone: 3000015, Address: New_Address
+Slot 16 : EMPTY
+Slot 17 : EMPTY
+Slot 18 : EMPTY
+Slot 19 : EMPTY
+
+ Table T4
+Slot 0 : EMPTY
+Slot 1 : EMPTY
+Slot 2 : EMPTY
+Slot 3 : EMPTY
+Slot 4 : EMPTY
+Slot 5 : EMPTY
+Slot 6 : EMPTY
+Slot 7 : EMPTY
+Slot 8 : EMPTY
+Slot 9 : EMPTY
+Slot 10 : EMPTY
+Slot 11 : EMPTY
+Slot 12 : EMPTY
+Slot 13 : EMPTY
+Slot 14 : EMPTY
+Slot 15 : EMPTY
+Slot 16 : EMPTY
+Slot 17 : EMPTY
+Slot 18 : EMPTY
+Slot 19 : EMPTY
+
+ Table T5
+Slot 0 : EMPTY
+Slot 1 : EMPTY
+Slot 2 : EMPTY
+Slot 3 : EMPTY
+Slot 4 : EMPTY
+Slot 5 : EMPTY
+Slot 6 : EMPTY
+Slot 7 : EMPTY
+Slot 8 : EMPTY
+Slot 9 : EMPTY
+Slot 10 : Name: Dave, Phone: 5482910, Address: 789_Pine_St
+Slot 11 : Name: Bob, Phone: 5482930, Address: 456_Oak_St
+Slot 12 : EMPTY
+Slot 13 : EMPTY
+Slot 14 : EMPTY
+Slot 15 : EMPTY
+Slot 16 : EMPTY
+Slot 17 : EMPTY
+Slot 18 : EMPTY
+Slot 19 : EMPTY
+
+ Table T6
+Slot 0 : EMPTY
+Slot 1 : EMPTY
+Slot 2 : EMPTY
+Slot 3 : EMPTY
+Slot 4 : EMPTY
+Slot 5 : EMPTY
+Slot 6 : EMPTY
+Slot 7 : EMPTY
+Slot 8 : EMPTY
+Slot 9 : EMPTY
+Slot 10 : EMPTY
+Slot 11 : EMPTY
+Slot 12 : EMPTY
+Slot 13 : EMPTY
+Slot 14 : EMPTY
+Slot 15 : EMPTY
+Slot 16 : EMPTY
+Slot 17 : EMPTY
+Slot 18 : EMPTY
+Slot 19 : EMPTY
+
+ Table T7
+Slot 0 : EMPTY
+Slot 1 : EMPTY
+Slot 2 : EMPTY
+Slot 3 : EMPTY
+Slot 4 : EMPTY
+Slot 5 : EMPTY
+Slot 6 : EMPTY
+Slot 7 : EMPTY
+Slot 8 : EMPTY
+Slot 9 : EMPTY
+Slot 10 : EMPTY
+Slot 11 : EMPTY
+Slot 12 : EMPTY
+Slot 13 : EMPTY
+Slot 14 : EMPTY
+Slot 15 : EMPTY
+Slot 16 : EMPTY
+Slot 17 : EMPTY
+Slot 18 : EMPTY
+Slot 19 : EMPTY
+
+ Table T8
+Slot 0 : EMPTY
+Slot 1 : EMPTY
+Slot 2 : EMPTY
+Slot 3 : EMPTY
+Slot 4 : EMPTY
+Slot 5 : EMPTY
+Slot 6 : EMPTY
+Slot 7 : EMPTY
+Slot 8 : EMPTY
+Slot 9 : EMPTY
+Slot 10 : EMPTY
+Slot 11 : EMPTY
+Slot 12 : EMPTY
+Slot 13 : EMPTY
+Slot 14 : EMPTY
+Slot 15 : EMPTY
+Slot 16 : EMPTY
+Slot 17 : EMPTY
+Slot 18 : EMPTY
+Slot 19 : EMPTY
+
+ Table T9
+Slot 0 : EMPTY
+Slot 1 : EMPTY
+Slot 2 : EMPTY
+Slot 3 : EMPTY
+Slot 4 : EMPTY
+Slot 5 : EMPTY
+Slot 6 : EMPTY
+Slot 7 : EMPTY
+Slot 8 : EMPTY
+Slot 9 : EMPTY
+Slot 10 : EMPTY
+Slot 11 : EMPTY
+Slot 12 : EMPTY
+Slot 13 : EMPTY
+Slot 14 : EMPTY
+Slot 15 : EMPTY
+Slot 16 : EMPTY
+Slot 17 : EMPTY
+Slot 18 : EMPTY
+Slot 19 : EMPTY
