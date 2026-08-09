@@ -43,6 +43,7 @@ Insert <Name> <PhoneNumber> <Address>
 Delete <PhoneNumber>
 Modify <OldPhoneNumber> <NewAddress>
 Modify <OldPhoneNumber> <NewAddress> <NewPhoneNumber>
+Print
 ```
 
 Example:
@@ -53,6 +54,7 @@ Insert Alice 5482362 452_Oak_Street
 Modify 5482362 452_Brown_Street
 Modify 5482930 452_Brown_Street 5482934
 Delete 5482362
+Print
 ```
 
 ---
@@ -61,14 +63,28 @@ Delete 5482362
 
 The program writes the return value of each command to `output.txt`.
 
+Successful operations produce:
+
+```
+Success
+```
+
+Failed operations produce:
+
+```
+Failure: <reason>
+```
+
 Example:
 
 ```
-true
-true
-true
-false
+Success 
+Success 
+Failure: Phone number already exists 
+Success 
+Failure: Record not found
 ```
+The **Print** command writes the current contents of all hash tables to the output file.
 
 ---
 
@@ -87,5 +103,5 @@ Invalid phone numbers are rejected before any operation is performed.
 ## Notes
 
 * Duplicate phone numbers are not allowed.
-* Deleted records are marked as **DELETED** and those slots are reused during future insertions.
+* Deleted records are marked as **DELETED**, and those slots are reused during future insertions.
 * Linear probing is used for insertion, searching, deletion, and modification.
