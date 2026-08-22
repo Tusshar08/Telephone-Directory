@@ -159,8 +159,8 @@ public class Directory {
                 return false;
             }
 
-            delete(oldPhone);
             if (insert(oldName, newPhone, address)) {
+                delete(oldPhone);
                 return true;
             }
         }
